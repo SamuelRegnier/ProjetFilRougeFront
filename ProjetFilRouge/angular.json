@@ -25,16 +25,21 @@
               "src/assets"
             ],
             "styles": [
+
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+
               "src/styles.css", 
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+
               "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
-            ]
 
+            ]
           },
           "configurations": {
             "production": {
@@ -101,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a224a5da-4eb5-4a7c-b835-0c31dfd450c3"
   }
 }
