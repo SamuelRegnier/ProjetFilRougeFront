@@ -1,0 +1,32 @@
+/* Style pour le titre */
+h1 {
+    font-size: 24px;
+    color: #333; /* Couleur du texte */
+    margin-bottom: 20px;
+  }
+  
+  /* Style pour les paragraphes */
+  p {
+    font-size: 16px;
+    color: #666; /* Couleur du texte */
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour la div avec la classe "col-3" */
+  .col-3 {
+    width: 33.33%; /* Largeur de 33.33% de la largeur parente */
+    float: left; /* Pour la mise en page en colonnes */
+    padding: 10px; /* Espace intérieur */
+    box-sizing: border-box; /* Pour inclure la bordure et le padding dans la largeur */
+  }
+  
+  /* Style pour la classe "mb-2" (marge basse) */
+  .mb-2 {
+    margin-bottom: 20px; /* Marge basse de 20px */
+  }
+  
+  /* Style pour la classe "g-2" (espacement) */
+  .g-2 {
+    margin-right: 20px; /* Espacement de droite de 20px */
+  }
+  

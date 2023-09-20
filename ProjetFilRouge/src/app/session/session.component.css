@@ -1,0 +1,166 @@
+.nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #3f51b5;
+    color: #fff;
+    display: flex;
+    padding: 0 16px;
+    align-items: center;
+    height: 56px;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+  }
+
+form {
+    margin-bottom: 20px; /* Espacement sous la barre de recherche */
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+.session-list {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .session-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .session-card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    background-color: #fff;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .session-card:hover {
+    transform: scale(1.05);
+  }
+  
+  h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    background-color:rgb(60, 73, 219);
+    color: white;
+  }
+  h2 {
+    font-size: 25px;
+  }
+
+  .card.session-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Style pour le signe + */
+.btn-add-session::before {
+ 
+  font-size: 24px;
+}
+
+/* Style pour l'étiquette "Ajouter une Session" */
+.btn-add-session:hover::after {
+  content: 'Ajouter une Session';
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  margin-left: 10px;
+}
+/* Style de base pour le footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px 0;
+}
+
+/* Style pour le texte du footer */
+.footer p {
+  font-size: 16px;
+}
+
+/* Style pour les liens dans le footer */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Style pour les icônes */
+.footer i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* Style pour les colonnes */
+.footer .col-md-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style pour la ligne de séparation */
+.footer hr {
+  border-top: 1px solid #555;
+}
+
+/* Style pour le texte du copyright */
+.footer p.text-center {
+  margin-top: 20px;
+}
+
+/* Style pour les éléments de liste */
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style pour les éléments de liste dans les colonnes */
+.footer ul li {
+  margin-bottom: 5px;
+}
+
+/* Style pour les titres des colonnes */
+.footer h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Style pour les liens de la liste dans les colonnes */
+.footer ul li a {
+  color: #ccc;
+}
+
+/* Style pour les liens de la liste dans les colonnes au survol */
+.footer ul li a:hover {
+  color: #fff;
+}
+
+/* Style pour les adresses dans la dernière colonne */
+.footer address {
+  margin-top: 10px;
+}
