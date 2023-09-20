@@ -11,11 +11,12 @@ import { SessionComponent } from './session/session.component';
 import { SessionFormComponent } from './session-form/session-form.component';
 import { LoginComponent } from './login/login.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsSessionComponent } from './details-session/details-session.component';
 import { SessionAddComponent } from './session-add/session-add.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsUserComponent } from './details-user/details-user.component';
+import { UserAddComponent } from './user-add/user-add.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +33,14 @@ import { DetailsUserComponent } from './details-user/details-user.component';
     DetailsSessionComponent,
     SessionAddComponent,
     UsersComponent,
-    DetailsUserComponent
+    DetailsUserComponent,
+    UserAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

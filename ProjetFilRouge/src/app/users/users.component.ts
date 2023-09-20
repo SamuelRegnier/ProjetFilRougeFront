@@ -16,20 +16,15 @@ export class UsersComponent implements OnInit {
     this.users = Users;
   }
 
-  onClickChange(user:User){
-    alert("Attention vous êtes sur le point de modifier l'utilisateur " +  user.nom + " " + user.prenom);
-  }
-
-  onClickDelete(user:User){
-    alert("Attention vous êtes sur le point de supprimer l'utilisateur " +  user.nom + " " + user.prenom);
-  }
-
   constructor(private router:Router){
   }
  
   onClick(user:User){
-    let link = ['/detailsUser', user];
-    this.router.navigate(link);
+    this.router.navigate(['/detailsUser', user]);
+  }
+
+  onCreateUser(){
+    this.router.navigate(['/addUser']);
   }
 
 }
