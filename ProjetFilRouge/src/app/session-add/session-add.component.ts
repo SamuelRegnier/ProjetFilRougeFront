@@ -9,13 +9,13 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class SessionAddComponent {
 
   constructor(private fb: FormBuilder) {
-    
+
   }
 
-    addSession = this.fb.group ({
-   dateDebut: ['', Validators.required], 
-   dateFin: ['', Validators.required],
-   idClassroom: ['', Validators.required]
+  addSession = this.fb.group ({
+      dateDebut: ['', Validators.required], 
+      dateFin: ['', Validators.required],
+      idClassroom: ['', Validators.required]
   });
 
   onSubmit () {
