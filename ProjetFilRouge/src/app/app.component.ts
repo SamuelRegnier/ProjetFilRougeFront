@@ -1,5 +1,5 @@
+import { Component} from '@angular/core';
 import { User } from './user.modele';
-import { Component } from '@angular/core';
 import { Users } from './users';
 
 @Component({
@@ -7,7 +7,10 @@ import { Users } from './users';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'ProjetFilRouge';
 
 }
+
+
