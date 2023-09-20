@@ -1,0 +1,74 @@
+/* Style pour le conteneur principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  /* Style pour la carte (card) */
+  .card {
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style pour l'en-tête de la carte */
+  .card-header {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  /* Style pour les messages d'erreur */
+  .text-danger {
+    color: #ff0000;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour le formulaire */
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Style pour les labels des champs */
+  .form-label {
+    font-weight: bold;
+  }
+  
+  /* Style pour les champs de formulaire */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: border-color 0.2s;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+  }
+  
+  /* Style pour le bouton de soumission */
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
