@@ -1,0 +1,38 @@
+<h1>Liste des Thèmes et des matières correspondantes - IT Training (Administrateur)</h1>
+
+<button type="button" class="btn btn-primary">Créer un thème</button>
+<div *ngFor=" let theme of themes" class="container-fluid card">
+  <h2>{{theme.id}}. {{theme.name}} </h2>
+  <p>L'informatique est un domaine d'activité scientifique, technique, et industriel concernant le traitement automatique de l'information numérique par l'exécution de programmes informatiques hébergés par des dispositifs électriques-électroniques : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.</p>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary">Rajouter une matière dans le thème</button>
+    <button type="button" class="btn btn-secondary">Modifier le thème</button>
+    <button type="button" (click) = "handleDeleteTheme(theme)" class="btn btn-danger">Supprimer le thème</button>
+  </div>
+  <div>
+    <div class="row">
+      <div *ngFor="let matter of theme.listMatter" class="card col-12 col-md-6 col-lg-3 matter mb-2 g-2">
+        <h3>{{matter.id}} : {{matter.name}}</h3>
+        <p>Un des langages de programmation les plus utilisés dans le domaine du développement Web. De nombreuses formations sont dispensées dans notre centre de formation.</p>
+        <p>Actions thème :</p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          
+          <button type="button" class="btn btn-light">Enlever</button>
+        </div>
+        <p>Actions matière :</p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-light">Voir formations</button>
+          <button type="button" class="btn btn-secondary">Modifier</button>
+          <p class="btn btn-danger" (click) = "handleDeleteMatter(theme,matter)" ><i class="bi bi-trash"></i></p>
+        </div>
+      </div>
+      <div class="card col-12 col-md-6 col-lg-3 matter mb-2 g-2">
+        <h3>Créer une matière</h3>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          
+          <button type="button" class="btn btn-primary">Créer une matière</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
