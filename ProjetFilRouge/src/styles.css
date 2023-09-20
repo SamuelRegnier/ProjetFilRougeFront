@@ -1,18 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
 .matter:hover {
-  transform: scale(1.01);
-}
-
-.img_booleans {
-  width: 20px;
- }
-
- .custom-tooltip {
-  --bs-tooltip-bg: var(--bd-violet-bg);
-  --bs-tooltip-color: var(--bs-white);
-}
-
-/*@import "~bootstrap/dist/css/bootstrap.css"*/
-/*@import "~ bootstrap-icons/font/bootstrap-icons.css";*/
-
+    transform: scale(1.01);
+  }
+  
+  .img_booleans {
+    width: 20px;
+   }
+  
+   .custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg);
+    --bs-tooltip-color: var(--bs-white);
+  }
+  
+  /*@import "~bootstrap/dist/css/bootstrap.css"*/
+  /*@import "~ bootstrap-icons/font/bootstrap-icons.css";*/
