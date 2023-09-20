@@ -1,0 +1,16 @@
+<div>
+    <h1 class="d-flex justify-content-center">Détails {{user?.nom}} {{user?.prenom}}</h1>
+      <h5>Id : {{user?.id}}</h5>
+      <h5>Nom : {{user?.nom}}</h5>
+      <h5>Prénom : {{user?.prenom}}</h5>
+      <h5>Date de naissance : {{user?.dateNaissance}}</h5>
+      <h5>Adresse : {{user?.adresse}}</h5>
+      <h5>Mail : {{user?.mail}}</h5>
+      <h5>Téléphone : {{user?.telephone}}</h5>
+      <h5>Statut : {{user?.statut}}</h5>
+    <div class="d-flex justify-content-center">
+      <a (click)="onClickChange(user)" class="btn btn-warning">Modifier</a>
+      <a (click)="onClickDelete(user)" class="btn btn-danger">Supprimer</a>
+      <a (click)="goBack()" class="btn btn-primary">Retour</a>
+    </div>
+</div>
