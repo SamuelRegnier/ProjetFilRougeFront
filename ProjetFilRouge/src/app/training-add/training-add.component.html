@@ -1,0 +1,40 @@
+<form [formGroup]="trainingForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Nom :</label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+    <div>
+        <label for="duree">Durée :</label>
+        <input id="duree" type="number" formControlName="duree"> jours
+        <p *ngIf="trainingForm.get('duree')?.value">équivalent à {{trainingForm.get('duree')!.value}} heures</p>
+    </div>
+    <div>
+        <label for="nbParticipants">Nombre de participants :</label>
+        <input id="nbParticipants" type="number" formControlName="nbParticipants">
+    </div>
+    <div>
+        <label for="certifiante">Certifiante ?</label>
+        <input type="checkbox" id="certifiante" value="true" formControlName="certifiante">
+    </div>
+    <div>
+        <label for="prerequis">Prérequis</label>
+        <input type="checkbox" id="prerequis" value="true" formControlName="certifiante">
+    </div>
+    <div>
+        <label for="prix">Prix : </label>
+        <input id="prix" type="number" formControlName="prix">
+    </div>
+    <div>
+        <label for="matter">Matière :</label>
+        <select id="matter" name="matter" formControlName="matter">
+        <option>Choisissez une matière</option>
+        <ng-container *ngFor="let theme of themes">
+            <option>--{{theme.name}}--</option>
+            <option *ngFor="let matter of theme.listMatter">{{matter.name}}</option>
+        </ng-container>
+        </select>
+        
+
+    </div>
+    <button type="submit" (click)="addTraining()">Submit</button>
+</form>
