@@ -10,4 +10,5 @@ import { Training } from './entities/training.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
+  title = "a"
 }
