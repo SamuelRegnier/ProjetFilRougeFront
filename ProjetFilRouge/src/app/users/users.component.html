@@ -1,0 +1,44 @@
+<body class="p-3 m-0 border-0 bd-example m-0 border-0 bd-example-cssgrid">
+<div class="container">
+    <div class="grid text-center g-col-8" style="--bs-columns: 4;">
+        <div *ngFor="let user of users" class="card " style="width: 12rem;"> 
+        <img src="{{user.photo}}" class="card-img-top" alt="avatar">
+        <div class="card-body">
+            <h5 class="card-title">{{user.nom}} {{user.prenom}}</h5>
+            <p class="card-text">{{user.statut}}</p>
+            <a (click)="onClick(user)" class="btn btn-primary">Détails</a>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!--<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Date de naissance</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Mail</th>
+        <th scope="col">Téléphone</th>
+        <th scope="col">Statut</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.nom}}</td>
+        <td>{{user.prenom}}</td>
+        <td>{{user.dateNaissance}}</td>
+        <td>{{user.adresse}}</td>
+        <td>{{user.mail}}</td>
+        <td>{{user.telephone}}</td>
+        <td>{{user.statut}}</td>
+        <td><a (click)="onClick(user)" class="btn btn-primary">Détails</a></td>
+        <td><a (click)="onClickChange(user)" class="btn btn-primary">Modifier</a></td>
+        <td><a (click)="onClickDelete(user)" class="btn btn-primary">Supprimer</a></td>
+    </tr>
+    </tbody>
+</table>-->

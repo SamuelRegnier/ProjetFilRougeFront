@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
-
+import { User } from './user.modele';
+import { Users } from './users';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,6 @@ import { Component} from '@angular/core';
 
 export class AppComponent {
   title = 'ProjetFilRouge';
- 
 
 }
 
