@@ -2,7 +2,7 @@
 <div class="container">
     <div class="grid text-center g-col-8" style="--bs-columns: 4;">
         <div *ngFor="let user of users" class="card " style="width: 12rem;"> 
-        <img src="{{user.photo}}" class="card-img-top" alt="avatar">
+        <img src="assets/photos/{{user.photo}}" class="card-img-top" alt="avatar">
         <div class="card-body">
             <h5 class="card-title">{{user.nom}} {{user.prenom}}</h5>
             <p class="card-text">{{user.statut}}</p>
@@ -10,6 +10,9 @@
         </div>
     </div>
     </div>
+</div>
+<div class="d-flex justify-content-center">
+    <a (click)="onCreateUser()" class="btn btn-primary">Creation utilisateur</a>
 </div>
 
 <!--<table class="table">

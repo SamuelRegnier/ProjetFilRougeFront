@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of, tap } from 'rxjs';
-import { Theme } from '../entities/theme.model';
+import { Theme } from '../model/theme.model';
 
 @Injectable({
   providedIn: 'root'

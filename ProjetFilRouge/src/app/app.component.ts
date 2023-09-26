@@ -1,7 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { trainings } from '../assets/objects/TRAININGS';
-import { Training } from './entities/training.model';
-import { User } from './user.modele';
+import { Training } from './model/training.model';
+import { User } from './model/user.modele';
 import { Users } from './users';
 
 @Component({

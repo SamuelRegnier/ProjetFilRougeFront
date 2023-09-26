@@ -1,0 +1,84 @@
+{
+    "sessions" : [
+
+{
+    "id": 1,
+    "dateDebut": "2023-09-22T00:00:00Z",
+    "dateFin":"2024-01-01T00:00:00Z",
+    "nbParticipant": 20,
+    "training": 2,
+    "classroom": 2,
+    "matter": 2    
+    },
+     
+    {
+    "id": 2,
+    "dateDebut":"2023-01-01T00:00:00Z",
+    "dateFin":"2023-01-01T00:00:00Z",
+    "nbParticipant": 20,
+    "training": 2,
+    "classroom": 2,  
+    "matter": 2
+        
+    },
+    {
+    "id": 3,
+    "dateDebut": "2024-01-01T00:00:00Z",
+    "dateFin": "2024-01-01T00:00:00Z",
+    "nbParticipant": 20,
+    "training": 2,  
+    "classroom": 1,
+    "matter":  2
+    },
+
+    {
+    "id": 4,
+    "dateDebut": "2024-01-01T00:00:00Z",
+    "dateFin":"2024-01-01T00:00:00Z" ,
+    "nbParticipant": 20,
+    "training": 2,    
+    "classroom": 1,
+    "matter": 2
+    },
+
+    {
+    "id": 5,
+    "dateDebut": "2024-01-01T00:00:00Z",
+    "dateFin": "2024-01-01T00:00:00Z",
+    "nbParticipant": 40,
+    "training": 2,
+    "classroom": 1,
+    "matter": 2   
+    },
+    {
+     "id":6,
+    "dateDebut": "2024-01-01T00:00:00Z",
+    "dateFin":"2024-01-01T00:00:00Z",
+    "nbParticipant": 20,
+    "training": 2,
+    "classroom": 2,  
+    "matter": 2
+            
+    },
+    {
+    "id": 7,
+    "dateDebut": "2024-01-01T00:00:00Z",
+    "dateFin":"2024-01-01T00:00:00Z",
+    "nbParticipant": 20,
+    "training": 2,
+    "classroom": 2,  
+    "matter": 2
+                
+    },
+    {
+    "id": 8,
+    "dateDebut": "2024-01-01T00:00:00Z",
+    "dateFin":"2024-01-01T00:00:00Z",
+    "nbParticipant": 20,
+    "training": 2,
+    "classroom": 2,  
+    "matter": 2
+        
+    }    
+    ] 
+}

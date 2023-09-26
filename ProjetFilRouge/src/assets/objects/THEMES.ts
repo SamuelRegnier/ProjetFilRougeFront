@@ -1,4 +1,4 @@
-import { Theme } from "src/app/entities/theme.model";
+import { Theme } from "src/app/model/theme.model";
 
 /*export const themes:Theme[]=[
     {

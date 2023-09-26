@@ -1,11 +1,11 @@
-import { Theme } from './../entities/theme.model';
+import { Theme } from './../model/theme.model';
 import { Component, NgModule, OnInit } from '@angular/core';
 import { ThemesService } from '../services/themes.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MattersService } from '../services/matters.service';
-import { Matter } from '../entities/matter.model';
+import { Matter } from '../model/matter.model';
 @Component({
   selector: 'app-themes',
   templateUrl: './themes.component.html',

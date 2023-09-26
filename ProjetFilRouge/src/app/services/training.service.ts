@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs'; // RxJS 6, à utiliser
+import { Observable, of, throwError } from 'rxjs'; // RxJS 6, Ã  utiliser
 import { catchError, map, tap } from 'rxjs/operators';
 import { Training } from '../model/training.model';
 import { ValidationErrors } from '@angular/forms'; 
@@ -49,7 +49,13 @@ export class TrainingsService {
         tap(_ => this.log(`created training id=${training.id}`)),
         catchError(this.handleError<Training>('Created Training')));
     }
-
+    getTrainingById (id: number): Observable <Training> {
+      const urlGetTrainingnById = `${this.trainingsUrl}/${id}`;
+      return this.http.get<Training> (urlGetTrainingnById).pipe (
+        tap (_=> this.log('fetched session id = ${id}')),
+        catchError (this.handleError <Training>('getSession id = ${id}'))
+      );
+    }
   private handleError<T>(operation='operation', result?: T) {
     return (error: any): Observable<T> => {
     console.log(error);

@@ -1,3 +1,5 @@
+
+
 <ng-template #errors class="text-danger"> {{errorMessage}}> 
     <div>{{errorMessage}}</div>
     </ng-template>
@@ -18,7 +20,7 @@
                   <a class="btn btn-primary" (click) ="selectSession(session)">Afficher plus de détails</a>
                   <div *ngIf="authService.hasRole('ADMIN')">
                     <button (click)="handleDeleteSession (session)" class = "btn btn-primary"> <i class="bi bi-trash3"></i></button>
-                    <button class="btn btn-primary">Modifier</button>
+                    <button (click)="handleEditSession (session)"class="btn btn-primary"> <i class="bi bi-pencil-square"></i></button> 
                   </div>
                 </div>
               </div>
@@ -30,15 +32,17 @@
   </div> 
    <div class="col-3 mb-2 g-2">
     <div class="card session-card">
-      <div class="card-body text-center" >
-      <div *ngIf="authService.hasRole('ADMIN')">
-        <button class="btn btn-primary btn-add-session">
-          <i class="fas fa-plus"></i> Cliquer ici pour créer une nouvelle session 
+      <div class="card-body" >
+      <div class="d-flex justify-content-center">
+        <button (click)="handleAddNewSession()" *ngIf="authService.hasRole('ADMIN')" class="btn btn-primary btn-add-session d-flex justify-content-center" >
+           Cliquer ici pour créer une nouvelle session 
         </button>
       </div>
     </div>
   </div>
-</div> 
+</div>  
+
+
 
  
         

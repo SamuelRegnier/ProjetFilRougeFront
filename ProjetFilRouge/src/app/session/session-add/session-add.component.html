@@ -1,0 +1,68 @@
+
+<h1>Ajouter une session</h1>
+
+<form [formGroup]="addSessionFormGroup" (ngSubmit)="handleAddSession ()">
+    
+    <div>
+        <label for="dateDebut"> Date de début : </label>
+        <input id="dateDebut" type="date" formControlName="dateDebut"  class = "form-control">
+        <small *ngIf="addSessionFormGroup.controls ['dateDebut'].errors && addSessionFormGroup.controls ['dateDebut'].touched" class="text-danger">
+                {{getErrorMessage ('dateDebut', addSessionFormGroup.controls ['dateDebut'].errors')}}
+
+        </small>
+    </div>
+    
+    <div>
+        <label for="dateFin">Date de fin: </label>
+        <input id="dateFin" type="date" formControlName="dateFin"  class = "form-control">
+        <small *ngIf="addSessionFormGroup.controls ['dateFin'].errors && addSessionFormGroup.controls ['dateFin'].touched" class="text-danger">
+            {{getErrorMessage('dateFin', addSessionFormGroup.controls ['dateFin'].errors')}}
+        </small>
+    </div>
+
+    <div>
+        <label class="form-label" for="nbParticipant">Nombre de participants: </label>
+        <input id="nbParticipant" type="number" formControlName="nbParticipant" class = "form-control">  
+    </div>
+    <div>
+        <label for="matter"> ID de la formation </label>
+        <div class="panel panel-default" formGroupName="training">
+        <select type="number" name="id" formControlName="id">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </div>
+    </div>
+
+    <div>
+        <label for="matter"> ID de la salle de cours </label>
+        <div class="panel panel-default" formGroupName="classroom">
+        <select type="number" name="id" formControlName="id">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </div>
+    </div>
+
+    <div>
+        <label for="matter"> ID de la matiere</label>
+        <div class="panel panel-default" formGroupName="matter">
+        <select type="number" name="id" formControlName="id">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </div>
+    </div>
+
+
+    <div> 
+        <button [disabled]="!addSessionFormGroup.valid" class="btn btn-info"  type="submit" >Enregistrer</button>
+    </div>
+    
+</form>

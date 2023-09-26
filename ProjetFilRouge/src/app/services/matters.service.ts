@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of, tap } from 'rxjs';
-import { Matter } from '../entities/matter.model';
-import { ThemeMatter } from '../entities/themematter.model';
+import { Matter } from '../model/matter.model';
+import { ThemeMatter } from '../model/themematter.model';
 
 @Injectable({
   providedIn: 'root'

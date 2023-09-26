@@ -1,8 +1,5 @@
 <div>
-    <h1 class="d-flex justify-content-center">Détails {{user?.nom}} {{user?.prenom}}</h1>
-      <div class="d-flex justify-content-center"> 
-        <img src="assets/photos/{{user.photo}}" alt="avatar">
-      </div> 
+    <h1 class="d-flex justify-content-center">Suppression de l'utilisateur {{user?.nom}} {{user?.prenom}}</h1>
       <h5 class="d-flex justify-content-center">Nom : {{user?.nom}}</h5>
       <h5 class="d-flex justify-content-center">Prénom : {{user?.prenom}}</h5>
       <h5 class="d-flex justify-content-center">Date de naissance : {{user?.dateNaissance}}</h5>
@@ -11,8 +8,7 @@
       <h5 class="d-flex justify-content-center">Téléphone : {{user?.telephone}}</h5>
       <h5 class="d-flex justify-content-center">Statut : {{user?.statut}}</h5>
     <div class="d-flex justify-content-center">
-      <a (click)="onClickChange(user)" class="btn btn-warning">Modifier</a>
-      <a (click)="onClickDelete(user)" class="btn btn-danger">Supprimer</a>
-      <a (click)="goBack()" class="btn btn-primary">Retour</a>
+      <a (click)="deleteUser(user)" class="btn btn-primary">Valider</a>
+      <a (click)="goBack()" class="btn btn-warning">Retour</a>
     </div>
 </div>

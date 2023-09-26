@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Training } from '../entities/training.model';
+import { Training } from '../model/training.model';
 import { TrainingsService } from '../services/trainings.service';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
