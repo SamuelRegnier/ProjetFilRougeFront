@@ -1,4 +1,4 @@
-import { Training } from "../../app/entities/training.model";
+import { Training } from "../../app/model/training.model";
 
 export const trainings:Training[]=[
     {

@@ -1,6 +1,6 @@
+import { User } from './../model/user.modele';
+import { UsersService } from './../services/users.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user.modele';
-import { Users } from '../users';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,25 +11,29 @@ import { Router } from '@angular/router';
 export class UsersComponent implements OnInit {
 
   users?:User[];
+  errorMessage?:string;
   
   ngOnInit(){
-    this.users = Users;
+    this.usersService.getUsers().subscribe(
+      {next : data => {this.users = data},
+      error: err => {this.errorMessage = err}}
+    );
+   // alert(this.usersService.getUsers());
   }
 
-  onClickChange(user:User){
-    alert("Attention vous êtes sur le point de modifier l'utilisateur " +  user.nom + " " + user.prenom);
-  }
-
-  onClickDelete(user:User){
-    alert("Attention vous êtes sur le point de supprimer l'utilisateur " +  user.nom + " " + user.prenom);
-  }
-
-  constructor(private router:Router){
+  constructor(private router:Router, private usersService: UsersService){
   }
  
   onClick(user:User){
-    let link = ['/detailsUser', user];
-    this.router.navigate(link);
+    this.router.navigate(['/detailsUser', user]);
+  }
+
+  onCreateUser(){
+    this.router.navigate(['admin/addUser']);
+  }
+
+  onUpdateUser(user : User){
+    this.router.navigate(['/admin/updateUser/'+ user.id]);
   }
 
 }

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { themes } from './../../assets/objects/THEMES';
-import { Theme } from './../entities/theme.model';
-import { Training } from '../entities/training.model';
+import { Theme } from './../model/theme.model';
+import { Training } from '../model/training.model';
 import { trainings } from 'src/assets/objects/TRAININGS';
 
 @Component({

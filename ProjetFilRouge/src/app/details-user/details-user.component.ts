@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user.modele';
+import { User } from '../model/user.modele';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Users } from '../users';
+import { UsersService } from '../services/users.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-details-user',
@@ -12,30 +14,32 @@ export class DetailsUserComponent implements OnInit {
   
   users! : User[];
   user! : User;
+  userId!: number;
+  errorMessage!: string;
 
-  constructor (private route:ActivatedRoute, private router:Router){
+  constructor (private route:ActivatedRoute, private router:Router, private userService:UsersService){
   }
 
   ngOnInit(): void {
-    this.users = Users;
-    let id:number = Number(this.route.snapshot.paramMap.get('id'));
-    for (const element of this.users){
-      if(element.id == id){
-        this.user = element;
+    this.userId = Number(this.route.snapshot.paramMap.get('id'));
+    this.userService.getUser(this.userId).subscribe(
+      {
+        next : user => {this.user = user},
+        error : err => {this.errorMessage = err}
       }
-    }
+    );
   }
 
   onClickChange(user:User){
-    alert("Attention vous êtes sur le point de modifier l'utilisateur " +  user.nom + " " + user.prenom);
+    this.router.navigate(['/updateUser', user]);
   }
 
   onClickDelete(user:User){
-    alert("Attention vous êtes sur le point de supprimer l'utilisateur " +  user.nom + " " + user.prenom);
+    this.router.navigate(['/admin/deleteUser', user]);
   }
 
   goBack(){
-    this.router.navigate(['/users'])
+    this.router.navigate(['/admin/users'])
   }
  
 }

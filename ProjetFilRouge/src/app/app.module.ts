@@ -11,10 +11,13 @@ import { SessionComponent } from './session/session.component';
 import { SessionFormComponent } from './session-form/session-form.component';
 import { LoginComponent } from './login/login.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsSessionComponent } from './details-session/details-session.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsUserComponent } from './details-user/details-user.component';
+import { UserAddComponent } from './user-add/user-add.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateSessionComponent } from './session/update-session/update-session.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SessionAddComponent } from './session/session-add/session-add.component';
@@ -36,13 +39,17 @@ import { DetailsTrainingComponent } from './details-training/details-training.co
     SessionAddComponent,
     UsersComponent,
     DetailsUserComponent,
+    UserAddComponent,
+    DeleteUserComponent,
+    UpdateUserComponent
     UpdateSessionComponent,
     DetailsTrainingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
