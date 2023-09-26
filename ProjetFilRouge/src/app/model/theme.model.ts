@@ -2,6 +2,6 @@ import { Matter } from "./matter.model";
 
 export interface Theme {
     id: number;
-    name: string;
+    nom: string;
     listMatter: Matter[];
 }

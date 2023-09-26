@@ -1,5 +1,4 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import { themes } from '../assets/objects/THEMES';
 import { trainings } from '../assets/objects/TRAININGS';
 import { Training } from './model/training.model';
 import { User } from './model/user.modele';
