@@ -15,7 +15,8 @@ form {
     margin-bottom: 20px; /* Espacement sous la barre de recherche */
   }
   
-  input[type="text"] {
+  input[type="text"] 
+  {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -93,74 +94,4 @@ form {
   font-size: 10px;
   margin-left: 10px;
 }
-/* Style de base pour le footer */
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 30px 0;
-}
 
-/* Style pour le texte du footer */
-.footer p {
-  font-size: 16px;
-}
-
-/* Style pour les liens dans le footer */
-.footer a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Style pour les icônes */
-.footer i {
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-/* Style pour les colonnes */
-.footer .col-md-4 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Style pour la ligne de séparation */
-.footer hr {
-  border-top: 1px solid #555;
-}
-
-/* Style pour le texte du copyright */
-.footer p.text-center {
-  margin-top: 20px;
-}
-
-/* Style pour les éléments de liste */
-.footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-/* Style pour les éléments de liste dans les colonnes */
-.footer ul li {
-  margin-bottom: 5px;
-}
-
-/* Style pour les titres des colonnes */
-.footer h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-/* Style pour les liens de la liste dans les colonnes */
-.footer ul li a {
-  color: #ccc;
-}
-
-/* Style pour les liens de la liste dans les colonnes au survol */
-.footer ul li a:hover {
-  color: #fff;
-}
-
-/* Style pour les adresses dans la dernière colonne */
-.footer address {
-  margin-top: 10px;
-}

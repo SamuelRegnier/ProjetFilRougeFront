@@ -1,5 +1,21 @@
+<!-- <div *ngIf="session"></div>
 <h1> Détails de Session {{session?.id}}</h1>
         <div class="col-3 mb-2 g-2"></div>
         <p>Date de début: {{session?.dateDebut}}</p>
         <p>Date de fin: {{session?.dateFin}}</p>
-        <p>Nombre de participants: {{session?.nbParticipant}}</p>  
+        <p>Nombre de participants: {{session?.nbParticipant}}</p>   -->
+
+<div class="session-details">
+   <h1>Détails de la Session {{ session?.id }}</h1>
+        <ul>
+          <li><strong>Date de début:</strong> {{ session?.dateDebut }}</li>
+          <li><strong>Date de fin:</strong> {{ session?.dateFin }}</li>
+          <li><strong>Nombre de participants:</strong> {{ session?.nbParticipant }}</li>
+          <li><strong>ID de la formation:</strong> {{ session?.training?.id}}</li>
+          <li><strong>ID de la salle:</strong> {{ session?.classroom?.id}}</li>
+          <li><strong>ID de la mattiere:</strong> {{ session?.matter?.id}}</li>
+        </ul>
+        
+        <a (click)="goBack()" class="btn btn-primary">Retour</a>
+        <a (click)="save()" class="btn btn-primary">save</a>
+</div>

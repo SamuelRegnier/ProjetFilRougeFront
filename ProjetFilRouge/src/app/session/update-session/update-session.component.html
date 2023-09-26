@@ -1,0 +1,85 @@
+<h1> Modifier la session</h1>
+
+<form [formGroup]="updateSessionForm" (ngSubmit)="handleUpdateSession ()"> 
+    
+    <div class="mb-3">
+        <label class="form-label">ID</label>
+        <input  type="text"  [value]= session.id  > 
+    </div>
+
+
+    <div>
+        <label class="form-label" for="dateDebut"> Date de début : </label>
+        <input id="dateDebut" type="date" formControlName="dateDebut" class="form-control" >
+       <small *ngIf="updateSessionForm.controls['dateDebut'].errors && updateSessionForm.controls['dateDebut'].touched" 
+            class="text-danger">
+            {{getErrorMessage('dateDebut', updateSessionForm.controls['dateDebut'].errors)}}
+        </small> 
+    </div>
+    
+    <div>
+        <label class="form-label" for="dateFin">Date de fin: </label>
+        <input id="dateFin" type="date" formControlName="dateFin">
+         <small *ngIf="updateSessionForm.controls['dateFin'].errors && updateSessionForm.controls['dateFin'].touched" 
+            class="text-danger">
+            {{getErrorMessage('dateFin', updateSessionForm.controls['dateFin'].errors)}}
+        </small>
+    </div>
+
+    <div>
+        <label class="form-label" for="nbParticipant">Nombre de participants: </label>
+        <input id="nbParticipant" type="number" formControlName="nbParticipant">
+         
+    </div>
+    <!-- <div>
+        <label class="form-label" for="classroom"> ID salle de cours </label>
+        <select id="classroom" name="classroom">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    </div> -->
+
+    <div>
+        <label for="matter"> ID de la formation </label>
+        <div class="panel panel-default" formGroupName="training">
+        <select type="number" name="id" formControlName="id">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </div>
+    </div>
+
+    <div>
+        <label for="matter"> ID de la salle de cours </label>
+        <div class="panel panel-default" formGroupName="classroom">
+        <select type="number" name="id" formControlName="id">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </div>
+    </div>
+
+    <div>
+        <label for="matter"> ID de la matiere</label>
+        <div class="panel panel-default" formGroupName="matter">
+        <select type="number" name="id" formControlName="id">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        </div>
+    </div>
+    
+    <div> 
+        <button [disabled]="updateSessionForm.invalid" class="btn btn-info"  type="submit">Enregistrer</button>
+    </div>
+    
+</form> 
+

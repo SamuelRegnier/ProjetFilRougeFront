@@ -13,9 +13,12 @@ import { LoginComponent } from './login/login.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetailsSessionComponent } from './details-session/details-session.component';
-import { SessionAddComponent } from './session-add/session-add.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsUserComponent } from './details-user/details-user.component';
+import { UpdateSessionComponent } from './session/update-session/update-session.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SessionAddComponent } from './session/session-add/session-add.component';
+import { DetailsTrainingComponent } from './details-training/details-training.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +35,15 @@ import { DetailsUserComponent } from './details-user/details-user.component';
     DetailsSessionComponent,
     SessionAddComponent,
     UsersComponent,
-    DetailsUserComponent
+    DetailsUserComponent,
+    UpdateSessionComponent,
+    DetailsTrainingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
