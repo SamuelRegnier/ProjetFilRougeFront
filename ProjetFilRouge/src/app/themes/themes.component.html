@@ -14,7 +14,12 @@
 </div>
 
 <div *ngFor=" let theme of themes" class="container-fluid card">
-  <h2>{{theme.id}}. {{theme.nom}} </h2>
+  <h2>{{theme.id}}. {{theme.nom}} 
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button (click)="clickOnUpdateTheme(theme.id)" type="button" class="btn btn-secondary"><i class="bi bi-pencil-square"></i> Modifier le thème</button>
+      <button type="button" (click)="handleDeleteTheme(theme)" class="btn btn-danger"><i class="bi bi-trash"></i> Supprimer le thème</button>
+    </div>
+  </h2>
   <div *ngIf="updatingTheme == theme.id">
     <form [formGroup]="themeForm" (ngSubmit)="updateTheme(theme.id)">
       <p>Modifier le thème :</p>
@@ -29,11 +34,7 @@
     électriques-électroniques : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.</p>
 
 
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-primary">Rajouter une matière dans le thème</button>
-    <button (click)="clickOnUpdateTheme(theme.id)" type="button" class="btn btn-secondary">Modifier le thème</button>
-    <button type="button" (click)="handleDeleteTheme(theme)" class="btn btn-danger">Supprimer le thème</button>
-  </div>
+  
 
 
   <div>
@@ -51,18 +52,11 @@
               <button (click)="clickOnUpdateMatter(matter.id, theme.id)">Retour</button>
             </form>
           </div>
-        <p>Actions thème :</p>
-        <div class="btn-group" role="group" aria-label="Basic example">
-
-          <button type="button" class="btn btn-light">Enlever</button>
-        </div>
         <p>Actions matière :</p>
         <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-light">Voir formations</button>
-          <div *ngIf="updatingMatter[0] != matter.id || updatingMatter[1] != theme.id">
-            <button  (click)="clickOnUpdateMatter(matter.id, theme.id)" type="button" class="btn btn-secondary">Modifier</button>
-          </div>
-          <p class="btn btn-danger" (click)="handleDeleteMatter(matter)"><i class="bi bi-trash"></i></p>
+          <button  (click)="clickOnUpdateMatter(matter.id, theme.id)" type="button" class="btn btn-secondary"><i class="bi bi-pencil-square"></i> Modifier</button>
+          <button class="btn btn-danger" (click)="handleDeleteMatter(matter)"><i class="bi bi-trash"></i> Supprimer</button>
         </div>
       </div>
       <div class="card col-12 col-md-6 col-lg-3 matter mb-2 g-2">

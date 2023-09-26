@@ -17,30 +17,30 @@ export class ThemesComponent implements OnInit {
   addingTheme: boolean = false;
   addingMatter: number = 0;
   updatingTheme: number = 0;
-  updatingMatter: number[] = [0,0];
+  updatingMatter: number[] = [0, 0];
   constructor(private service: ThemesService, private fb: FormBuilder, private service2: MattersService,
     public authService: AuthenticationService,
     private router: Router) { }
 
-    clickOnAddTheme(): void {
-      this.addingTheme = !this.addingTheme;
-    }
+  clickOnAddTheme(): void {
+    this.addingTheme = !this.addingTheme;
+  }
 
-    clickOnAddMatter(id : number): void {
-      if (this.addingMatter == id) {
-        this.addingMatter = 0;
-      } else {
-        this.addingMatter = id;
-      }
+  clickOnAddMatter(id: number): void {
+    if (this.addingMatter == id) {
+      this.addingMatter = 0;
+    } else {
+      this.addingMatter = id;
     }
+  }
 
-    clickOnUpdateMatter(idm : number, idt : number): void {
-      if (this.updatingMatter[0] == idm && this.updatingMatter[1] == idt) {
-        this.updatingMatter = [0,0];
-      } else {
-        this.updatingMatter = [idm,idt];
-      }
+  clickOnUpdateMatter(idm: number, idt: number): void {
+    if (this.updatingMatter[0] == idm && this.updatingMatter[1] == idt) {
+      this.updatingMatter = [0, 0];
+    } else {
+      this.updatingMatter = [idm, idt];
     }
+  }
 
   clickOnUpdateTheme(id: number): void {
     if (this.updatingTheme == id) {
@@ -194,5 +194,5 @@ export class ThemesComponent implements OnInit {
     this.clickOnUpdateMatter(matter.id, theme.id);
   }
 
-  
+
 }
