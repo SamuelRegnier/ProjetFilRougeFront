@@ -13,8 +13,8 @@
       <th colspan="3" scope="col">Actions</th>
     </tr>
   </thead>
-  <tbody *ngFor=" let training of trainings">
-    <tr>
+  <tbody >
+    <tr *ngFor=" let training of trainings">
       <td>{{training.id}}</td>
       <td class="text_image_side_by_side">{{training.nom}} 
 
@@ -32,7 +32,7 @@
       <td>{{training.prix}}€</td>
       <td><button class="btn btn-primary">Voir les sessions</button></td>
       <td><button class="btn btn-primary">Plus d'informations</button></td>
-      <td><button class="btn btn-warning"><i class="bi bi-pen"></i></button></td>
+      <td><button routerLink="/training-add" [queryParams]="{id: training.id }" class="btn btn-warning"><i class="bi bi-pen"></i></button></td>
       <td><button class="btn btn-danger" (click) = "handleDeleteTraining(training)" ><i class="bi bi-trash"></i></button></td>
     </tr>
   </tbody>

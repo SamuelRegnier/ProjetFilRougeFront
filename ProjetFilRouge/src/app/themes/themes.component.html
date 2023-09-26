@@ -1,36 +1,87 @@
 <h1>Liste des Thèmes et des matières correspondantes - IT Training (Administrateur)</h1>
 
-<button type="button" class="btn btn-primary">Créer un thème</button>
+<div *ngIf="!addingTheme">
+  <button (click)="clickOnAddTheme()" type="button" class="btn btn-primary">Créer un thème</button>
+</div>
+<div *ngIf="addingTheme">
+  <form [formGroup]="themeForm" (ngSubmit)="addTheme()">
+    <p>Créer un thème :</p>
+    <label for="name">Nom :</label>
+    <input id="name" type="text" formControlName="name">
+    <button (click) = "addTheme()" type="submit">Rajouter</button>
+    <button (click)="clickOnAddTheme()">Retour</button>
+  </form>
+</div>
+
 <div *ngFor=" let theme of themes" class="container-fluid card">
-  <h2>{{theme.id}}. {{theme.name}} </h2>
-  <p>L'informatique est un domaine d'activité scientifique, technique, et industriel concernant le traitement automatique de l'information numérique par l'exécution de programmes informatiques hébergés par des dispositifs électriques-électroniques : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.</p>
+  <h2>{{theme.id}}. {{theme.nom}} </h2>
+  <div *ngIf="updatingTheme == theme.id">
+    <form [formGroup]="themeForm" (ngSubmit)="updateTheme(theme.id)">
+      <p>Modifier le thème :</p>
+      <label for="name">Nom :</label>
+      <input id="name" type="text" formControlName="name">
+      <button (click) = "updateTheme(theme.id)" type="submit">Modifier</button>
+      <button (click)="clickOnUpdateTheme(theme.id)">Retour</button>
+    </form>
+  </div>
+  <p>L'informatique est un domaine d'activité scientifique, technique, et industriel concernant le traitement
+    automatique de l'information numérique par l'exécution de programmes informatiques hébergés par des dispositifs
+    électriques-électroniques : des systèmes embarqués, des ordinateurs, des robots, des automates, etc.</p>
+
+
   <div class="btn-group" role="group" aria-label="Basic example">
     <button type="button" class="btn btn-primary">Rajouter une matière dans le thème</button>
-    <button type="button" class="btn btn-secondary">Modifier le thème</button>
-    <button type="button" (click) = "handleDeleteTheme(theme)" class="btn btn-danger">Supprimer le thème</button>
+    <button (click)="clickOnUpdateTheme(theme.id)" type="button" class="btn btn-secondary">Modifier le thème</button>
+    <button type="button" (click)="handleDeleteTheme(theme)" class="btn btn-danger">Supprimer le thème</button>
   </div>
+
+
   <div>
     <div class="row">
       <div *ngFor="let matter of theme.listMatter" class="card col-12 col-md-6 col-lg-3 matter mb-2 g-2">
-        <h3>{{matter.id}} : {{matter.name}}</h3>
-        <p>Un des langages de programmation les plus utilisés dans le domaine du développement Web. De nombreuses formations sont dispensées dans notre centre de formation.</p>
+        <h3>{{matter.id}} : {{matter.nom}}</h3>
+        <p>Un des langages de programmation les plus utilisés dans le domaine du développement Web. De nombreuses
+          formations sont dispensées dans notre centre de formation.</p>
+          <div *ngIf="updatingMatter[0] == matter.id && updatingMatter[1] == theme.id">
+            <form [formGroup]="matterForm" (ngSubmit)="addMatter(theme)">
+              <p>Modifier une matière :</p>
+              <label for="name">Nom :</label>
+              <input id="name" type="text" formControlName="name">
+              <button (click) = "updateMatter(matter, theme)" type="submit">Modifier</button>
+              <button (click)="clickOnUpdateMatter(matter.id, theme.id)">Retour</button>
+            </form>
+          </div>
         <p>Actions thème :</p>
         <div class="btn-group" role="group" aria-label="Basic example">
-          
+
           <button type="button" class="btn btn-light">Enlever</button>
         </div>
         <p>Actions matière :</p>
         <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-light">Voir formations</button>
-          <button type="button" class="btn btn-secondary">Modifier</button>
-          <p class="btn btn-danger" (click) = "handleDeleteMatter(theme,matter)" ><i class="bi bi-trash"></i></p>
+          <div *ngIf="updatingMatter[0] != matter.id || updatingMatter[1] != theme.id">
+            <button  (click)="clickOnUpdateMatter(matter.id, theme.id)" type="button" class="btn btn-secondary">Modifier</button>
+          </div>
+          <p class="btn btn-danger" (click)="handleDeleteMatter(matter)"><i class="bi bi-trash"></i></p>
         </div>
       </div>
       <div class="card col-12 col-md-6 col-lg-3 matter mb-2 g-2">
         <h3>Créer une matière</h3>
         <div class="btn-group" role="group" aria-label="Basic example">
-          
-          <button type="button" class="btn btn-primary">Créer une matière</button>
+
+        <div *ngIf="addingMatter != theme.id"><button (click)="clickOnAddMatter(theme.id)" type="button" class="btn btn-primary">Créer une matière</button>
+        </div>
+
+        
+        <div *ngIf="addingMatter == theme.id">
+          <form [formGroup]="matterForm" (ngSubmit)="addMatter(theme)">
+            <p>Créer un thème :</p>
+            <label for="name">Nom :</label>
+            <input id="name" type="text" formControlName="name">
+            <button (click) = "addMatter(theme)" type="submit">Rajouter</button>
+            <button (click)="clickOnAddMatter(theme.id)">Retour</button>
+          </form>
+        </div>
         </div>
       </div>
     </div>

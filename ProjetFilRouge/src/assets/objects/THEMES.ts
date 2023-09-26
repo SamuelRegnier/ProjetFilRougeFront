@@ -1,6 +1,6 @@
 import { Theme } from "src/app/entities/theme.model";
 
-export const themes:Theme[]=[
+/*export const themes:Theme[]=[
     {
         "id": 1, 
         "name": "Informatique", 
@@ -82,4 +82,4 @@ export const themes:Theme[]=[
             }
         ]
     },
-]
+]*/

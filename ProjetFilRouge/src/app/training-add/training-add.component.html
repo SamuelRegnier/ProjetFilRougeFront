@@ -29,12 +29,22 @@
         <select id="matter" name="matter" formControlName="matter">
         <option>Choisissez une matière</option>
         <ng-container *ngFor="let theme of themes">
-            <option>--{{theme.name}}--</option>
-            <option *ngFor="let matter of theme.listMatter">{{matter.name}}</option>
+            <option>--{{theme.nom}}--</option>
+            <option *ngFor="let matter of theme.listMatter">{{matter.nom}}</option>
         </ng-container>
         </select>
-        
 
     </div>
-    <button type="submit" (click)="addTraining()">Submit</button>
+    
+    <div>
+        <label for="description">Description :</label>
+        <input id="description" type="text" formControlName="description">
+    </div>
+    {{id}}
+    <div *ngIf="!id">
+     <button type="submit" routerLink="/trainings" (click)="addTraining()">Submit</button>
+    </div>
+    <div *ngIf="id">
+     <button type="submit" routerLink="/trainings" (click)="updateTraining(id)">Submit</button>
+    </div>
 </form>
