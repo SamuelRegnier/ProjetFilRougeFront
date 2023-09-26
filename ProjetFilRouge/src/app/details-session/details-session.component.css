@@ -1,0 +1,62 @@
+/* Style pour le conteneur des détails de session */
+.session-details {
+    text-align: center; /* Centrer le contenu */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 0 auto; /* Centrer horizontalement */
+    max-width: 400px; /* Limiter la largeur */
+    margin-top: 20px;
+  }
+  
+  /* Style pour le titre */
+  .session-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    background-color: rgb(60, 73, 219);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Centrer le titre */
+  }
+  
+  /* Style pour la liste des détails */
+  .session-details ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .session-details ul li {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: left; /* Aligner le texte à gauche */
+  }
+  
+  /* Style pour les éléments forts (termes) */
+  .session-details ul li strong {
+    font-weight: bold;
+  }
+  
+  /* Style pour le lien de retour */
+  .session-details a.btn-primary {
+    display: block; /* Remplacer l'élément en bloc */
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+    margin: 0 auto; /* Centrer horizontalement */
+    width: max-content; /* Ajuster la largeur au contenu */
+  }
+  
+  .session-details a.btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
