@@ -12,20 +12,25 @@ import { DetailsSessionComponent } from './details-session/details-session.compo
 import { UsersComponent } from './users/users.component';
 import { DetailsUserComponent } from './details-user/details-user.component';
 import { UserAddComponent } from './user-add/user-add.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes = [
   {path:"login", component: LoginComponent } ,
-  {path:"users", component:UsersComponent},
-  {path:"detailsUser", component:DetailsUserComponent},
   {path:"themes", component: ThemesComponent},
   {path:"trainings", component: TrainingsComponent},
+  {path:"detailsUser", component:DetailsUserComponent},
   {path:"training-add", component: TrainingAddComponent},
-  {path:"addUser", component: UserAddComponent},
+  {path:"updateUser", component:UpdateUserComponent},
   {path:"", redirectTo:'trainings', pathMatch:'full' } , 
   {path: "detailsSession", component: DetailsSessionComponent },
   {path:"admin", component: AdminTemplateComponent, canActivate : [AuthenticationGuard], children:   [  
   {path:"session", component: SessionComponent },
   {path: "sessionAdd", component : SessionAddComponent },
+  {path:"deleteUser", component:DeleteUserComponent},
+  {path:"updateUser", component:UpdateUserComponent},
+  {path:"addUser", component: UserAddComponent},
+  {path:"users", component:UsersComponent},
 
 ]}]
 

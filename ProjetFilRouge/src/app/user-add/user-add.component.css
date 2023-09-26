@@ -13,8 +13,10 @@ label {
 }
 
 /*Style pour les champs de saisie */
+
 input[type="text"],
-input[type="date"] {
+input[type="date"],
+select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -46,3 +48,7 @@ button[type="submit"] {
     text-align: center; /* Centrer le titre du formulaire /
     padding: 10px; / Ajouter de l'espace autour du titre */
   }
+
+  button {
+    margin : 10px;
+}

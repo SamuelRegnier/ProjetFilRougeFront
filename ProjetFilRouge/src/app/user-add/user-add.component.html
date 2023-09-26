@@ -2,33 +2,44 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div>
         <label for="nom">Nom : </label>
-        <input type="text" id="nom" ngModel required>
+        <input type="text" id="nom" formControlName="nom"> 
     </div>
     <div>
         <label for="prenom">Prenom : </label>
-        <input type="text" id="prenom" ngModel required>
+        <input type="text" id="prenom" formControlName="prenom">
     </div>
     <div>
         <label for="dateNaissance">Date de naissance : </label>
-        <input type="date" id="dateNaissance" ngModel required>
+        <input type="date" id="dateNaissance" formControlName="dateNaissance">
     </div>
     <div>
         <label for="adresse">Adresse : </label>
-        <input type="text" id="adresse" ngModel required>
+        <input type="text" id="adresse" formControlName="adresse">
     </div>
     <div>
         <label for="mail">Mail : </label>
-        <input type="text" id="mail" ngModel required>
+        <input type="text" id="mail" formControlName="mail">
     </div>
     <div>
         <label for="telephone">Téléphone : </label>
-        <input type="text" id="telephone" ngModel required>
+        <input type="text" id="telephone" formControlName="telephone">
     </div>
     <div>
         <label for="statut">Statut : </label>
-        <input type="text" id="statut" ngModel required>
+        <select type="text" name="statut" formControlName="statut">
+            <option value="etudiant">Etudiant</option>
+            <option value="formateur">Formateur</option>
+        </select>
     </div>
     <div>
-        <button class="d-flex justify-content-center" type="submit" [disabled]="!userForm.valid">Valider</button>
+        <label for="statut">Photo : </label>
+        <select type="text" name="photo" formControlName="photo">
+            <option value="homme.png">Homme</option>
+            <option value="femme.png">Femme</option>
+        </select>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit" [disabled]="!userForm.valid">Valider</button>
+        <button type="button" (click)="goBack()" class="btn btn-warning">Retour</button>
     </div>
 </form>

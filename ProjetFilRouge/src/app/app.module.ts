@@ -17,6 +17,9 @@ import { SessionAddComponent } from './session-add/session-add.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsUserComponent } from './details-user/details-user.component';
 import { UserAddComponent } from './user-add/user-add.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +37,16 @@ import { UserAddComponent } from './user-add/user-add.component';
     SessionAddComponent,
     UsersComponent,
     DetailsUserComponent,
-    UserAddComponent
+    UserAddComponent,
+    DeleteUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

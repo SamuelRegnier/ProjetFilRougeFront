@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Training } from '../entities/training.model';
+import { Training } from '../model/training.model';
 import { trainings } from 'src/assets/objects/TRAININGS';
 
 @Component({

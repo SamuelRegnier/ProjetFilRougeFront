@@ -1,4 +1,4 @@
-import { Theme } from './../entities/theme.model';
+import { Theme } from './../model/theme.model';
 import { themes } from './../../assets/objects/THEMES';
 import { Component, NgModule, OnInit } from '@angular/core';
 @Component({

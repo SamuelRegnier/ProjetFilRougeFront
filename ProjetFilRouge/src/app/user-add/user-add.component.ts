@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UsersService } from '../services/users.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-user-add',
@@ -8,19 +11,37 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class UserAddComponent {
 
-  constructor(private fb: FormBuilder){};
+  userForm!:FormGroup;
 
-  userForm = this.fb.group({
-    nom :  ['', Validators.required],
-    prenom :  ['', Validators.required],
-    dateNaissance :  ['', Validators.required],
-    adresse :  ['', Validators.required],
-    mail :  ['', Validators.required],
-    telephone :  ['', Validators.required],
-    statut :  ['', Validators.required],
-  })
+  constructor(private fb: FormBuilder, private router : Router, private userService : UsersService, private location : Location){};
 
-  onSubmit(){
-    alert("L'utilisateur a bien été crée");
+  ngOnInit (){ 
+    this.userForm = this.fb.group({
+      nom: this.fb.control('',[Validators.required]),
+      prenom: this.fb.control('',[Validators.required]),
+      dateNaissance : this.fb.control('', [Validators.required]),
+      adresse :  this.fb.control('',[Validators.required]),
+      mail :  this.fb.control('',[Validators.required]),
+      telephone :  this.fb.control('',[Validators.required]),
+      statut :  this.fb.control('',[ Validators.required]),
+      photo :  this.fb.control('',[ Validators.required]),
+    })
+  }
+
+  onSubmit(){;
+    let userToCreate =  this.userForm.value;
+    this.userService.addProduct(userToCreate).subscribe({
+       next : data => {
+         alert ("L'utilisateur a été créé avec succès");
+         this.userForm.reset;
+         this.router.navigateByUrl("/admin/users"); 
+       },
+       error : err => { console.log(err);
+       }
+    })
+  }
+
+  goBack(): void{
+    this.location.back()
   }
 }

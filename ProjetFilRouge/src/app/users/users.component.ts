@@ -1,6 +1,6 @@
+import { User } from './../model/user.modele';
+import { UsersService } from './../services/users.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user.modele';
-import { Users } from '../users';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,12 +11,17 @@ import { Router } from '@angular/router';
 export class UsersComponent implements OnInit {
 
   users?:User[];
+  errorMessage?:string;
   
   ngOnInit(){
-    this.users = Users;
+    this.usersService.getUsers().subscribe(
+      {next : data => {this.users = data},
+      error: err => {this.errorMessage = err}}
+    );
+   // alert(this.usersService.getUsers());
   }
 
-  constructor(private router:Router){
+  constructor(private router:Router, private usersService: UsersService){
   }
  
   onClick(user:User){
@@ -24,7 +29,11 @@ export class UsersComponent implements OnInit {
   }
 
   onCreateUser(){
-    this.router.navigate(['/addUser']);
+    this.router.navigate(['admin/addUser']);
+  }
+
+  onUpdateUser(user : User){
+    this.router.navigate(['/admin/updateUser/'+ user.id]);
   }
 
 }

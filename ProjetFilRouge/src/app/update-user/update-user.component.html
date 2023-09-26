@@ -1,0 +1,35 @@
+<h1 class="d-flex justify-content-center">Modifier l'utilisateur {{user.nom}} {{user.prenom}}</h1>
+<form [formGroup]="userFormGroup" (ngSubmit)="handleUpdateUser()">
+    <div>
+        <label for="nom">Nom : </label>
+        <input type="text" id="nom" ngModel required formControlName="nom">
+    </div>
+    <div>
+        <label for="prenom">Prenom : </label>
+        <input type="text" id="prenom" ngModel required formControlName="prenom">
+    </div>
+    <div>
+        <label for="dateNaissance">Date de naissance : </label>
+        <input type="date" id="dateNaissance" ngModel required formControlName="dateNaissance">
+    </div>
+    <div>
+        <label for="adresse">Adresse : </label>
+        <input type="text" id="adresse" ngModel required formControlName="adresse">
+    </div>
+    <div>
+        <label for="mail">Mail : </label>
+        <input type="text" id="mail" ngModel required formControlName="mail">
+    </div>
+    <div>
+        <label for="telephone">Téléphone : </label>
+        <input type="text" id="telephone" ngModel required formControlName="telephone">
+    </div>
+    <div>
+        <label for="statut">Statut : </label>
+        <input type="text" id="statut" ngModel required formControlName="statut">
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit" [disabled]="!userFormGroup.valid" class="btn btn-success">Valider</button>
+        <button type="button" (click)="goBack()" class="btn btn-warning">Retour</button>
+    </div>
+</form>
