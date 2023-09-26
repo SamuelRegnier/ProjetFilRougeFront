@@ -21,7 +21,7 @@ export class DeleteUserComponent {
     this.userId = Number(this.route.snapshot.paramMap.get('id'));
     this.userService.getUser(this.userId).subscribe(
       {
-        next : user => {this.user = user},
+        next : data => {this.user = data},
         error : err => {this.errorMessage = err}
       }
     );

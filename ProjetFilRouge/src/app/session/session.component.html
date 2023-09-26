@@ -32,9 +32,9 @@
   </div> 
    <div class="col-3 mb-2 g-2">
     <div class="card session-card">
-      <div class="card-body text-center" >
-      <div >
-        <button (click)="handleAddNewSession()" *ngIf="authService.hasRole('ADMIN')" class="btn btn-primary btn-add-session" >
+      <div class="card-body" >
+      <div class="d-flex justify-content-center">
+        <button (click)="handleAddNewSession()" *ngIf="authService.hasRole('ADMIN')" class="btn btn-primary btn-add-session d-flex justify-content-center" >
            Cliquer ici pour créer une nouvelle session 
         </button>
       </div>

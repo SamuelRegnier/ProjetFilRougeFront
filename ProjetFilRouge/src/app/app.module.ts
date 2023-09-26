@@ -20,8 +20,8 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateSessionComponent } from './session/update-session/update-session.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SessionAddComponent } from './session/session-add/session-add.component';
 import { DetailsTrainingComponent } from './details-training/details-training.component';
+import { SessionAddComponent } from './session/session-add/session-add.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { DetailsTrainingComponent } from './details-training/details-training.co
     DetailsUserComponent,
     UserAddComponent,
     DeleteUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
     UpdateSessionComponent,
     DetailsTrainingComponent
   ],

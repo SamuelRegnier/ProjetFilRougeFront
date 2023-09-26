@@ -26,7 +26,6 @@ const routes: Routes = [
   {path:"", redirectTo:'trainings', pathMatch:'full' } , 
   {path: "detailsSession", component: DetailsSessionComponent },
   //{path:"", component: LoginComponent } ,  
-  {path: "detailsSession", component: DetailsSessionComponent },
   {path:"admin", component: AdminTemplateComponent, canActivate : [AuthenticationGuard], children:   [  
       {path:"session", component: SessionComponent },
       {path: "sessionAdd", component : SessionAddComponent },

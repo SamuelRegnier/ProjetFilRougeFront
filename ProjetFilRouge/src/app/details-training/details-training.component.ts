@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Training } from '../entities/training.model';
+import { Training } from '../model/training.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TrainingsService } from '../services/training.service';
 

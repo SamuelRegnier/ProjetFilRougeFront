@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs'; // RxJS 6, Ã  utiliser
 import { catchError, map, tap } from 'rxjs/operators';
-import { Training } from '../entities/training.model';
+import { Training } from '../model/training.model';
 import { ValidationErrors } from '@angular/forms'; 
 
 @Injectable({

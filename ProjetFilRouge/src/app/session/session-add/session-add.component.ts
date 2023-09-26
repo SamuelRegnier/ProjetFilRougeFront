@@ -23,8 +23,7 @@ sessions: Session[] = [];
 
   constructor(private fb: FormBuilder,
               private sessionService: SessionService,
-              private router: Router,
-              private trainingsService: TrainingsService) {
+              private router: Router) {
 
   }
  ngOnInit(): void {
