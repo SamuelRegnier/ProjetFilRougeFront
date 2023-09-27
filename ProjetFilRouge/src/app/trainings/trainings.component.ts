@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Training } from '../model/training.model';
 import { TrainingsService } from '../services/trainings.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
+
 
 @Component({
   selector: 'app-trainings',
@@ -12,13 +13,20 @@ import { AuthenticationService } from '../services/authentication.service';
 export class TrainingsComponent {
   trainings!: Training[];
   errorMessage!: string;
+  trainingId!: number;
+  training!: Training;
   constructor(private service: TrainingsService,
     public authService: AuthenticationService,
-    private router: Router) { }
+    private router: Router,
+    private route:ActivatedRoute) { }
 
 
   ngOnInit(): void {
     this.handleGetAllTrainings();
+  }
+
+  handleGetTrainingId(training : Training){
+    this.router.navigate(['/detailsTraining', training]);
   }
 
   handleGetAllTrainings() {
@@ -31,7 +39,7 @@ export class TrainingsComponent {
   }
 
   handleDeleteTraining(p: Training) {
-    let conf = confirm("Are you sure ? ");
+    let conf = confirm("Etes vous certains de vouloir supprimer la formation " + p.nom +" ?");
     if (conf == false) return;
     else {
       this.service.deleteTraining(p).subscribe({
@@ -44,4 +52,6 @@ export class TrainingsComponent {
       });
     }
   }
+
+ 
 }

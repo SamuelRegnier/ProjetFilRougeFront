@@ -10,6 +10,7 @@ import { ValidationErrors } from '@angular/forms';
 })
 export class TrainingsService {
   private trainingsUrl:string = "http://localhost:8080/api/trainings";
+  private url="http://localhost:8080/api/trainings"
 
   constructor(private http: HttpClient){}
   
@@ -19,6 +20,11 @@ export class TrainingsService {
       tap(_=> this.log(`fetched trainings OK`)),
       catchError(this.handleError(`getTrainings`, [] ))
       )
+  }
+
+  getTraining(trainingId: number): Observable<Training>{
+    const url2 = `${this.url}/${trainingId}`
+    return this.http.get<Training>(url2).pipe(catchError(this.handleError<Training>(`getUser id=${trainingId}`)))
   }
 
   updateTraining(training: Training): Observable<Training>{

@@ -1,1 +1,13 @@
-<p>details-training works!</p>
+<div>
+    <h1 class="d-flex justify-content-center">Détails {{training?.nom}}</h1>
+      <h5 class="d-flex justify-content-center">Nom : {{training?.nom}}</h5>
+      <h5 class="d-flex justify-content-center">Description : {{training?.description}}</h5>
+      <h5 class="d-flex justify-content-center">Durée (jours) : {{training?.duree}}</h5>
+      <h5 class="d-flex justify-content-center">Nombre participants: {{training?.nbParticipants}}</h5>
+      <h5 class="d-flex justify-content-center">Certifiante : {{training?.certifiante}}</h5>
+      <h5 class="d-flex justify-content-center">Pre-requis : {{training?.prerequis}}</h5>
+      <h5 class="d-flex justify-content-center">Prix : {{training?.prix}}</h5>
+    <div class="d-flex justify-content-center">
+      <a (click)="goBack()" class="btn btn-primary">Retour</a>
+    </div>
+</div>

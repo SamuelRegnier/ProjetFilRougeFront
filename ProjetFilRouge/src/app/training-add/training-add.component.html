@@ -1,28 +1,34 @@
+<div *ngIf="!id">
+    <h1>Creation Formation</h1>
+</div>
+<div *ngIf="id">
+    <h1>Modification Formation</h1>
+</div>
 <form [formGroup]="trainingForm" (ngSubmit)="onSubmit()">
     <div>
         <label for="name">Nom :</label>
         <input id="name" type="text" formControlName="name">
     </div>
     <div>
-        <label for="duree">Durée :</label>
-        <input id="duree" type="number" formControlName="duree"> jours
-        <p *ngIf="trainingForm.get('duree')?.value">équivalent à {{trainingForm.get('duree')!.value}} heures</p>
+        <label for="duree">Durée (jours) :</label>
+        <input id="duree" type="number" formControlName="duree" class="form-control">
+        <p *ngIf="trainingForm.get('duree')?.value" >équivalent à {{trainingForm.get('duree')!.value}} heures</p>
     </div>
     <div>
         <label for="nbParticipants">Nombre de participants :</label>
-        <input id="nbParticipants" type="number" formControlName="nbParticipants">
+        <input id="nbParticipants" type="number" formControlName="nbParticipants" class="form-control">
     </div>
     <div>
-        <label for="certifiante">Certifiante ?</label>
+        <label for="certifiante">Certifiante :</label>
         <input type="checkbox" id="certifiante" value="true" formControlName="certifiante">
     </div>
     <div>
-        <label for="prerequis">Prérequis</label>
+        <label for="prerequis">Prérequis :</label>
         <input type="checkbox" id="prerequis" value="true" formControlName="certifiante">
     </div>
     <div>
         <label for="prix">Prix : </label>
-        <input id="prix" type="number" formControlName="prix">
+        <input id="prix" type="number" formControlName="prix" class="form-control">
     </div>
     <div>
         <label for="matter">Matière :</label>
@@ -41,10 +47,12 @@
         <input id="description" type="text" formControlName="description">
     </div>
     {{id}}
-    <div *ngIf="!id">
-     <button type="submit" routerLink="/trainings" (click)="addTraining()">Submit</button>
+    <div *ngIf="!id" class="d-flex justify-content-center">
+     <button type="submit" routerLink="/trainings" (click)="addTraining()">Valider</button>
+     <button (click)="goBack()" class="btn btn-warning">Retour</button>
     </div>
-    <div *ngIf="id">
-     <button type="submit" routerLink="/trainings" (click)="updateTraining(id)">Submit</button>
+    <div *ngIf="id" class="d-flex justify-content-center">
+     <button type="submit" routerLink="/trainings" (click)="updateTraining(id)">Valider</button>
+     <button (click)="goBack()" class="btn btn-warning">Retour</button>
     </div>
 </form>

@@ -1,0 +1,54 @@
+/*Style général pour le formulaire d'ajout d'utilisateur */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px; /*Ajouter de l'espace à l'intérieur du formulaire */
+  }
+  
+  /*Style pour les étiquettes des champs */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /*Style pour les champs de saisie */
+  
+  input[type="text"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 15px;
+  }
+  
+  /*Style pour le bouton de soumission*/
+  button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+   /* button[type="submit"]:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }*/
+  
+    h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        background-color: rgb(60, 73, 219);
+        color: white;
+        text-align: center; /* Centrer le titre du formulaire /
+        padding: 10px; / Ajouter de l'espace autour du titre */
+      }
+  
+    button {
+      margin : 10px;
+  }

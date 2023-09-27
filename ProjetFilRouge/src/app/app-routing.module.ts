@@ -1,3 +1,4 @@
+import { DetailsTrainingComponent } from './details-training/details-training.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ThemesComponent } from './themes/themes.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"trainings", component: TrainingsComponent},
   {path:"users", component:UsersComponent},
   {path:"detailsUser", component:DetailsUserComponent},
+  {path:"detailsTraining", component:DetailsTrainingComponent},
   {path:"training-add", component: TrainingAddComponent},
   {path:"", redirectTo:'trainings', pathMatch:'full' } , 
   {path: "detailsSession", component: DetailsSessionComponent },

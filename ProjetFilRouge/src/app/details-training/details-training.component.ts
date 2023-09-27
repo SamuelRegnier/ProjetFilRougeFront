@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Training } from '../model/training.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TrainingsService } from '../services/training.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-details-training',
@@ -15,7 +16,7 @@ export class DetailsTrainingComponent implements OnInit {
   id!: number;
   
 
-  constructor (private route:ActivatedRoute, private router : Router, private trainingService: TrainingsService){}
+  constructor (private route:ActivatedRoute, private router : Router, private trainingService: TrainingsService, private location : Location){}
 
   
    ngOnInit(): void { //ngOnInit est une méthode du cycle de vie d'un composant Angular qui est appelée lorsque le composant est initialisé. 
@@ -35,6 +36,10 @@ export class DetailsTrainingComponent implements OnInit {
          this.errorMessage = err;
        }
      });
+  }
+
+  goBack(): void{
+    this.location.back()
   }
  
 }

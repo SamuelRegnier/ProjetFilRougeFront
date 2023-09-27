@@ -6,6 +6,7 @@ import { Training } from '../model/training.model';
 import { trainings } from 'src/assets/objects/TRAININGS';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TrainingsService } from '../services/trainings.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-training-add',
@@ -14,7 +15,7 @@ import { TrainingsService } from '../services/trainings.service';
 })
 export class TrainingAddComponent {
   constructor(private service: TrainingsService, private fb:FormBuilder, private route: ActivatedRoute,
-    private router: Router) {}
+    private router: Router, private location: Location) {}
   themes!:Theme[];
   id?:number;
 
@@ -85,5 +86,9 @@ export class TrainingAddComponent {
       error : err => { console.log(err);
       }
   })
+  }
+
+  goBack(): void{
+    this.location.back()
   }
 }
